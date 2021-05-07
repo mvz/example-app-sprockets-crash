@@ -56,3 +56,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "administrate", "~> 0.16.0"
+
+gem "bootstrap-sass", "~> 3.4"
