@@ -23,3 +23,5 @@ config.assets.configure do |env|
   env.export_concurrent = false
 end
 ```
+
+Related bug report: https://github.com/rails/sprockets/issues/706
