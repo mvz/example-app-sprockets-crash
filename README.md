@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This example app demonstrates a crash in sprockets + sassc when precompiling assets.
 
-Things you may want to cover:
+The ingredients to trigger the crash are:
 
-* Ruby version
+- sprockets 4.0
+- administrate 0.15.0 or 0.16.0
+- bootstrap-sass
 
-* System dependencies
+Given these dependencies, adding a scss file (in this repo, `base.scss`) with
+the following lines makes running `bundle exec assets:precomile` segfault:
 
-* Configuration
+```scss
+@import "bootstrap-sprockets";
+@import "bootstrap";
+```
 
-* Database creation
+Adding the following to `config.application.rb` makes the problem go away:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```ruby
+config.assets.configure do |env|
+  env.export_concurrent = false
+end
+```
