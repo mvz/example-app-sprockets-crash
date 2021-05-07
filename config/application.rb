@@ -18,5 +18,8 @@ module Sprocra
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.assets.configure do |env|
+      env.export_concurrent = false
+    end
   end
 end
