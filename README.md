@@ -16,7 +16,8 @@ the following lines makes running `bundle exec assets:precomile` segfault:
 @import "bootstrap";
 ```
 
-Adding the following to `config.application.rb` makes the problem go away:
+As suggested in https://github.com/sass/sassc-ruby/issues/207, adding the
+following to `config.application.rb` makes the problem go away:
 
 ```ruby
 config.assets.configure do |env|
