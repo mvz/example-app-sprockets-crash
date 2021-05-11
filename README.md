@@ -9,7 +9,7 @@ The ingredients to trigger the crash are:
 - bootstrap-sass
 
 Given these dependencies, adding a scss file (in this repo, `base.scss`) with
-the following lines makes running `bundle exec assets:precomile` segfault:
+the following lines makes running `bundle exec rake assets:precompile` segfault:
 
 ```scss
 @import "bootstrap-sprockets";
